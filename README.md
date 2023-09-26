@@ -2,6 +2,8 @@
 
 ## Added concurrent start from root directory. Run with 'npm run dev'.
 
+### Bonus page @ /frontend/public/bonus.html
+
 -Edward-
 
 REST-Rant is an app where users can review restaurants.
