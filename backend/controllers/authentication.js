@@ -1,9 +1,7 @@
 const router = require("express").Router();
 const db = require("../models");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken"); //changed from 'jwt' since I get module not found
-
-const { User } = db;
+const jwt = require("jwt");
 
 router.post("/", async (req, res) => {
   let user = await User.findOne({
@@ -30,9 +28,7 @@ router.get("/profile", async (req, res) => {
     const [authenticationMethod, token] = req.headers.authorization.split(" ");
     if (authenticationMethod == "Bearer") {
       const result = await jwt.decode(process.env.JWT_SECRET, token);
-
       const { id } = result.value;
-
       let user = await User.findOne({
         where: {
           userId: id,
@@ -45,4 +41,4 @@ router.get("/profile", async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = authentication;
