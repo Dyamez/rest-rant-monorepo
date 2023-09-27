@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const db = require("../models");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken"); //changed from 'jwt' since I get module not found
 
 const { User } = db;
 
