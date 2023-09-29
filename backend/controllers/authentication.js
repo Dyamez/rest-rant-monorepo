@@ -23,8 +23,8 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/profile", async (req, res) => {
-  res.json(req.currentUser);
-  /*console.log(req.session.userId);
+  //res.json(req.currentUser);
+  console.log(req.session.userId);
   try {
     let user = await User.findOne({
       where: {
@@ -34,7 +34,7 @@ router.get("/profile", async (req, res) => {
     res.json(user);
   } catch {
     res.json(null);
-  }*/
+  }
 });
 
 router.post("/super-important-route", async (req, res) => {
